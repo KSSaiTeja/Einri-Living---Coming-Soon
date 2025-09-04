@@ -22,7 +22,7 @@
       :root {
         --bg-image: url("assets/bg-image2.jpg");
         --brand: #1f2937; /* gray-800 */
-        --panel-bg: rgba(255, 255, 255, 0.85);
+        --panel-bg: rgb(255, 255, 255);
         --panel-border: rgba(255, 255, 255, 0.6);
         --text: #111827;
         --muted: #6b7280;
@@ -40,7 +40,7 @@
         font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto,
           Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
         color: var(--text);
-        background: #f3f4f6;
+        background: #ffffff;
         min-height: 100svh;
         overflow-x: hidden;
       }
@@ -167,7 +167,12 @@
   <body>
     <main class="wrap">
       <section class="panel" role="region" aria-label="Coming Soon">
-        <h1 class="brand">Einri Living</h1>
+        <img
+          src="assets/logo.png"
+          alt="Einri Living"
+          width="300"
+          height="100"
+        />
         <div class="tagline">Our website is under construction</div>
         <p class="sub" id="statusText" aria-live="polite">Launching in</p>
         <div class="timer" aria-label="Countdown to launch" role="timer">
