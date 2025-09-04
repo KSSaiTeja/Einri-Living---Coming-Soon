@@ -2,11 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Einri Interiors — Coming Soon</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Einri Living — Coming Soon</title>
     <meta
       name="description"
-      content="Einri Interiors — Coming Soon. Launching October 4, 2025."
+      content="Einri Living — Coming Soon. Launching October 4, 2025."
     />
     <meta name="robots" content="noindex, nofollow" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,7 +20,7 @@
     />
     <style>
       :root {
-        --bg-image: url("assets/bg-image.jpg");
+        --bg-image: url("assets/bg-image2.jpg");
         --brand: #1f2937; /* gray-800 */
         --panel-bg: rgba(255, 255, 255, 0.85);
         --panel-border: rgba(255, 255, 255, 0.6);
@@ -64,13 +67,26 @@
       }
       .wrap {
         min-height: 100svh;
+        min-height: 100dvh;
         display: grid;
         place-items: center;
-        padding: 32px;
+        padding: clamp(16px, 3vw, 32px);
+        padding-left: calc(
+          clamp(16px, 3vw, 32px) + env(safe-area-inset-left, 0px)
+        );
+        padding-right: calc(
+          clamp(16px, 3vw, 32px) + env(safe-area-inset-right, 0px)
+        );
+        padding-top: calc(
+          clamp(16px, 3vw, 32px) + env(safe-area-inset-top, 0px)
+        );
+        padding-bottom: calc(
+          clamp(16px, 3vw, 32px) + env(safe-area-inset-bottom, 0px)
+        );
       }
       .panel {
         width: min(920px, 92vw);
-        padding: 48px 40px;
+        padding: clamp(28px, 5vw, 56px) clamp(20px, 4.5vw, 48px);
         border-radius: 16px;
         background: var(--panel-bg);
         border: 1px solid var(--panel-border);
@@ -79,7 +95,7 @@
         text-align: center;
       }
       .brand {
-        font-size: clamp(28px, 4vw, 42px);
+        font-size: clamp(26px, 5vw, 48px);
         font-weight: 700;
         color: var(--brand);
         letter-spacing: 0.4px;
@@ -89,35 +105,39 @@
         color: #444444;
         font-weight: 600;
         letter-spacing: 0.3px;
+        font-size: clamp(14px, 2.4vw, 18px);
       }
       .sub {
         margin: 0 0 26px;
         color: var(--muted);
-        font-size: 15px;
+        font-size: clamp(13px, 2.2vw, 16px);
       }
       .timer {
         display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 18px;
-        justify-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+        gap: clamp(12px, 3vw, 20px);
+        justify-items: stretch;
         margin: 12px 0 8px;
+        width: 100%;
       }
       .tile {
         background: #111827;
         color: #fff;
         border-radius: 12px;
-        padding: 18px 14px;
-        width: 120px;
+        padding: clamp(14px, 3vw, 18px) clamp(12px, 3vw, 16px);
         box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
       .num {
-        font-size: 34px;
+        font-size: clamp(28px, 6vw, 40px);
         font-weight: 700;
         line-height: 1.1;
         letter-spacing: 0.5px;
       }
       .label {
-        font-size: 12px;
+        font-size: clamp(10px, 1.6vw, 12px);
         text-transform: uppercase;
         opacity: 0.8;
         letter-spacing: 1.2px;
@@ -127,12 +147,12 @@
       .launch-note {
         margin-top: 22px;
         color: var(--muted);
-        font-size: 14px;
+        font-size: clamp(13px, 1.8vw, 14px);
       }
       footer {
         margin-top: 26px;
         color: #3b3b3b;
-        font-size: 12px;
+        font-size: clamp(11px, 1.6vw, 12px);
       }
       @media (max-width: 540px) {
         .tile {
@@ -147,7 +167,7 @@
   <body>
     <main class="wrap">
       <section class="panel" role="region" aria-label="Coming Soon">
-        <h1 class="brand">Einri Interiors</h1>
+        <h1 class="brand">Einri Living</h1>
         <div class="tagline">Our website is under construction</div>
         <p class="sub" id="statusText" aria-live="polite">Launching in</p>
         <div class="timer" aria-label="Countdown to launch" role="timer">
@@ -169,7 +189,7 @@
           </div>
         </div>
         <p class="launch-note">Launch date: October 4, 2025</p>
-        <footer>© <span id="year"></span> Einri Interiors</footer>
+        <footer>© <span id="year"></span> Einri Living</footer>
       </section>
     </main>
     <script>
