@@ -99,6 +99,8 @@
         font-weight: 700;
         color: var(--brand);
         letter-spacing: 0.4px;
+        align-items: center;
+        justify-content: center;
       }
       .tagline {
         margin: 12px 0 22px;
@@ -154,6 +156,14 @@
         color: #3b3b3b;
         font-size: clamp(11px, 1.6vw, 12px);
       }
+      /* Center and scale logo across devices */
+      .panel > img:first-of-type {
+        display: block;
+        margin: 0 auto clamp(16px, 3vw, 24px);
+        max-width: clamp(160px, 40vw, 230px);
+        width: 100%;
+        height: auto;
+      }
       @media (max-width: 540px) {
         .tile {
           width: 100%;
@@ -170,8 +180,8 @@
         <img
           src="assets/logo.png"
           alt="Einri Living"
-          width="300"
-          height="100"
+          width="230"
+          height="80"
         />
         <div class="tagline">Our website is under construction</div>
         <p class="sub" id="statusText" aria-live="polite">Launching in</p>
